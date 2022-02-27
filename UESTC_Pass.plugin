@@ -1,0 +1,10 @@
+[Rule]
+DOMAIN,smaco2.uestc.edu.cn,REJECT
+
+[URL Rewrite]
+^https:\/\/smaco2\.uestc\.edu\.cn\/wx\/autoLogin\?aim=tempSelfSign-controllerId-(.+?0\$7\$0\$0|8a9ac7ed62dbbca2016395226fb71403)&.* 302 https://matchc.github.io/UESTC-OUT/#/home
+^https:\/\/smaco2\.uestc\.edu\.cn\/wx\/autoLogin\?aim=tempSelfSign-controllerId-.* 302 https://matchc.github.io/UESTC-IN/#/home
+^https:\/\/smaco2\.uestc\.edu\.cn\/ reject
+
+[MITM]
+hostname = %APPEND% smaco2.uestc.edu.cn
