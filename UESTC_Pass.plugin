@@ -7,4 +7,4 @@ DOMAIN,smaco2.uestc.edu.cn,REJECT
 ^https:\/\/smaco2\.uestc\.edu\.cn\/ reject
 
 [MITM]
-hostname = %APPEND% smaco2.uestc.edu.cn
+hostname = smaco2.uestc.edu.cn
