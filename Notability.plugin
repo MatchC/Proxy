@@ -3,9 +3,7 @@
 #!icon=https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/4b/84/62/4b846289-5508-c748-be8c-abae808cf62c/AppIcon-2x_U007euniversal-4-0-85-220.png/492x0w.png
 
 [Script]
-
 http-response ^https?:\/\/notability\.com\/(global|subscriptions) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/notability.js, requires-body=true, timeout=60 ,tag=Notability Plus
 
 [MITM]
-
 hostname = notability.com
