@@ -1,6 +1,6 @@
 #!name=Youdao Dictionary Unlock
 #!desc=有道词典会员解锁
-#!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/ydcd.png
+#!icon=https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/12b07311be1796607fd18f7ff57f60f9_GfYv9zaERi.icns
 
 [Script]
 http-response ^https:\/\/dict\.youdao\.com\/vip\/user\/status requires-body=1,script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/wyydcd.js
