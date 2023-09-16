@@ -1,0 +1,55 @@
+#!name = 去广告
+#!desc = tbw
+
+
+[Rule]
+
+# QQMusic
+DOMAIN, tmeadcomm.y.qq.com, REJECT
+DOMAIN, ad.tencentmusic.com, REJECT
+DOMAIN, adstats.tencentmusic.com, REJECT
+DOMAIN, tmead.y.qq.com, REJECT
+DOMAIN-SUFFIX, rqd.qq.com, REJECT
+DOMAIN-SUFFIX, wup.imtt.qq.com, REJECT
+DOMAIN-SUFFIX, gdt.qq.com, REJECT
+DOMAIN-SUFFIX, android.rqd.qq.com, REJECT
+DOMAIN-SUFFIX, e.qq.com, REJECT
+DOMAIN-SUFFIX, beacon.qq.com, REJECT
+DOMAIN-SUFFIX, v.gdt.qq.com, REJECT
+
+# UnionPay
+DOMAIN, ads.95516.com, REJECT
+DOMAIN, cm-10-138.getui.com, REJECT
+DOMAIN, sdk.open.talk.getui.net, REJECT
+DOMAIN, sdk-conf.getui.com, REJECT
+DOMAIN, switch.cup.com.cn, REJECT
+DOMAIN, tysdk.95516.com, REJECT
+
+[Rewrite]
+# UnionPay
+^https:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1 reject
+
+# WeChat Official Account
+^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|masonryfeed|relatedarticle)\? reject-dict
+
+# 小红书
+^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(get_style|open|submit_action) reject-dict
+^https:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? reject-dict
+^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v3\/note\/guide\? reject-dict
+^https:\/\/www\.xiaohongshu\.com\/api\/sns\/v1\/ads\/resource\? reject-dict
+
+[Script]
+# 小红书
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/note\/widgets script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/RedPaper/RedPaper_remove_ads.js, requires-body = true, tag = 小红书移除详情页小部件
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/(banner|hot)_list script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/RedPaper/RedPaper_remove_ads.js, requires-body = true, tag = 小红书移除搜索页广告
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/(hint|trending)\? script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/RedPaper/RedPaper_remove_ads.js, requires-body = true, tag = 小红书移除搜索页广告
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v10\/search\/notes\? script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/RedPaper/RedPaper_remove_ads.js, requires-body = true, tag = 小红书移除搜索页广告
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\? script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/RedPaper/RedPaper_remove_ads.js, requires-body = true, tag = 小红书移除开屏广告
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config$ script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/RedPaper/RedPaper_remove_ads.js, requires-body = true, tag = 小红书移除开屏广告
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\? script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/CommonScript/replace-body.js, requires-body = true, tag = 小红书移除信息流广告
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\? script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/CommonScript/replace-body.js, requires-body = true, tag = 小红书移除信息流广告
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(v2\/note\/feed|v3\/note\/videofeed)\? script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/CommonScript/replace-body.js, requires-body = true, tag = 小红书移除图片和视频水印
+
+
+[Mitm]
+hostname = wallet.95516.com, mp.weixin.qq.com，edith.xiaohongshu.com, www.xiaohongshu.com
