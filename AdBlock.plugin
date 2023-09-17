@@ -39,6 +39,12 @@ DOMAIN, tysdk.95516.com, REJECT
 # WeChat Official Account
 ^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|masonryfeed|relatedarticle)\? reject-dict
 
+# 闲鱼 //gw.alicdn.com, acs.m.taobao.com
+^https:\/\/gw\.alicdn\.com\/mt\/ reject
+^https:\/\/gw\.alicdn\.com\/tfs\/.+\d{3,4}-\d{4} reject
+^https:\/\/gw\.alicdn\.com\/tps\/.+\d{3,4}-\d{4} reject
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome reject
+
 # Xiaohongshu
 ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(get_style|open|submit_action) reject-dict
 ^https:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? reject-dict
@@ -59,4 +65,4 @@ http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(v2\/note\/feed|v3\/
 
 
 [Mitm]
-hostname = api.douban.com, res.kfc.com.cn, wallet.95516.com, mp.weixin.qq.com，edith.xiaohongshu.com, www.xiaohongshu.com
+hostname = api.douban.com, res.kfc.com.cn, wallet.95516.com, mp.weixin.qq.com, gw.alicdn.com, heic.alicdn.com, edith.xiaohongshu.com, www.xiaohongshu.com
