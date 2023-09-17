@@ -33,6 +33,12 @@ DOMAIN, tysdk.95516.com, REJECT
 # KFC
 ^https:\/\/res\.kfc\.com\.cn\/advertisement reject
 
+# 美团 & 美团外卖//flowplus.meituan.net, img.meituan.net, s3plus.meituan.net
+^http:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\? url reject-dict
+^https:\/\/flowplus\.meituan\.net\/v1\/mss_\w+\/linglong\/\d+\.jpg url reject-dict
+^https:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg url reject-dict
+^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$ url reject-dict
+
 # UnionPay
 ^https:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1 reject
 
@@ -65,4 +71,4 @@ http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(v2\/note\/feed|v3\/
 
 
 [Mitm]
-hostname = api.douban.com, res.kfc.com.cn, wallet.95516.com, mp.weixin.qq.com, gw.alicdn.com, heic.alicdn.com, edith.xiaohongshu.com, www.xiaohongshu.com
+hostname = api.douban.com, res.kfc.com.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, wallet.95516.com, mp.weixin.qq.com, gw.alicdn.com, heic.alicdn.com, edith.xiaohongshu.com, www.xiaohongshu.com
