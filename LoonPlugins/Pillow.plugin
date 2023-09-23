@@ -1,6 +1,5 @@
 #!name=Pillow Unlock
-#!desc=有道词典会员解锁
-#!icon=https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/12b07311be1796607fd18f7ff57f60f9_GfYv9zaERi.icns
+#!desc=Pillow Unlock
 
 [Script]
 http-response ^https?:\/\/api\.revenuecat\.com\/v1\/(receipts|subscribers\/\$RCAnonymousID%3A\w{32})$ requires-body=1,script-path=https://raw.githubusercontent.com/MatchC/Proxy/main/JavaScripts/Pillow.js
