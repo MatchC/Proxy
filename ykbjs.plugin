@@ -1,0 +1,10 @@
+#!name=ykb
+#!desc=ykb
+
+[Script]
+
+http-response ^http[s]?:\/\/api.yikaobang.com.cn\/index.php\/curriculum\/main\/detail script-path=https://raw.githubusercontent.com/MatchC/Proxy/main/ykbjs.js, requires-body=true, timeout=60 ,tag=ykbjs
+
+[MITM]
+
+hostname = api.yikaobang.com.cn
