@@ -1,0 +1,17 @@
+#!name = 极简汇率解锁
+#!desc = 非一次性解锁，每次使用前需要先启用此插件，无需点击[恢复购买]按钮即可解锁。
+#!openUrl = https://apps.apple.com/app/id851033695
+#!author = Match[https://github.com/chxm1023]
+#!tag = 解锁
+#!system = 
+#!system_version = 
+#!loon_version = 3.2.1(745)
+#!homepage = https://gitlab.com/isous/loonresource/-/blob/main/README.md
+#!icon = https://gitlab.com/isous/loonresource/-/raw/main/Icon/xCurrency.png
+#!date = 2024-09-13 10:28:47
+
+[Script]
+http-response ^https?:\/\/explorer\.tratao\.com\/api\/client\/xtool\/vip script-path = https://gitlab.com/isous/loonresource/-/raw/main/Script/xCurrency/xCurrency_crack.js, requires-body = true, tag = xCurrency Crack
+  
+[MitM]
+hostname = explorer.tratao.com
